@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DCBMSWebApp.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- BOOTSTRAP STYLES-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    
+     <!-- FONTAWESOME STYLES-->
+    <link href="Assets/css/font-awesome.css" rel="stylesheet" />
+
+        <!-- CUSTOM STYLES-->
+    <link href="Assets/css/custom.css" rel="stylesheet" />
+    
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   
+     <!-- DATEPICKER UI-->
+   <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    
+
+</head>
+<body>
+<div id="wrapper">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="adjust-nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/logo.png"/>
+                </a>
+            </div>
+
+            <span class="logout-spn" >
+                  <a href="#" style="color: #fff;">Diagnostic Center Bill Management System</a>  
+
+                </span>
+        </div>
+    </div>
+    <!-- /. NAV TOP -->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+
+                <li class="active-link">
+                    <a href="Home.aspx"><i class="fa fa-desktop "></i>Home</a>
+                </li>
+
+                <li >
+                    <a href="TestTypeUI.aspx"><i class="fa fa-edit "></i>Type Setup</a>
+                </li>
+
+
+                <li>
+                    <a href="TestUI.aspx"><i class="fa fa-edit "></i>Test Setup</a>
+                </li>
+                <li >
+                    <a href="TestRequestEntryUI.aspx"><i class="fa fa-edit "></i>Test Request Entry</a>
+                </li>
+
+
+                <li>
+                    <a href="PaymentUI.aspx"><i class="fa fa-qrcode "></i>Payment</a>
+                </li>
+                <li>
+                    <a href="TestWiseReportUI.aspx"><i class="fa fa-table"></i>Test Wise Report</a>
+                </li>
+
+                <li>
+                    <a href="TypeWiseReportUI.aspx"><i class="fa fa-table "></i>Type Wise Report</a>
+                </li>
+                <li>
+                    <a href="UnpaidBillReportUI.aspx"><i class="fa fa-table "></i>Unpaid Bill Report</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+    <!-- /. NAV SIDE -->
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><%: Page.Title %></h2>
+                </div>
+            </div>
+            <!-- /. ROW -->
+            <hr/>
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+            <!-- /. ROW -->
+        </div>
+        <!-- /. PAGE INNER -->
+
+    </div>
+    <!-- /. PAGE WRAPPER -->
+</div>
+<div class="footer">
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            &copy; <%: DateTime.Now.Year %> | Design by: Optimistic
+        </div>
+    </div>
+</div>
+
+
+<!-- /. WRAPPER -->
+<!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+<!-- JQUERY SCRIPTS -->
+    <script src="Scripts/jquery-1.12.4.js"></script>
+<!-- BOOTSTRAP SCRIPTS -->
+    <script src="Scripts/bootstrap.min.js"></script>
+<!-- CUSTOM SCRIPTS -->
+    <script src="Assets/js/custom.js"></script>
+<!-- DATEPICKER PURPOSE SCRIPTS -->
+    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+</body>
+</html>
