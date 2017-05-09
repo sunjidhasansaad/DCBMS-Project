@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
-namespace DCBMSWebApp
+namespace DCBMSWebApp.UI
 {
     public partial class TestTypeUI : System.Web.UI.Page
     {

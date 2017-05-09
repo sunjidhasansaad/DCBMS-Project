@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DCBMSWebApp
+namespace DCBMSWebApp.UI
 {
 
 

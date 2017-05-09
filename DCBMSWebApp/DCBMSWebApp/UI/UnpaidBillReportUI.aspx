@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Report" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UnpaidBillReportUI.aspx.cs" Inherits="DCBMSWebApp.UnpaidBillReportUI" %>
+﻿<%@ Page Title="Report" Language="C#" MasterPageFile="~/UI/Site.Master" AutoEventWireup="true" CodeBehind="UnpaidBillReportUI.aspx.cs" Inherits="DCBMSWebApp.UI.UnpaidBillReportUI" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Assets/css/form.css" rel="stylesheet"/>

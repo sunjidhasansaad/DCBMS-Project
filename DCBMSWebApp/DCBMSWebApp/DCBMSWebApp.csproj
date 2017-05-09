@@ -113,7 +113,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Home.aspx" />
+    <Content Include="UI\Home.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -131,7 +131,7 @@
     <Content Include="Assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\fonts\glyphicons-halflings-regulard41d.eot" />
-    <Content Include="PaymentUI.aspx" />
+    <Content Include="UI\PaymentUI.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
@@ -139,7 +139,7 @@
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
-    <Content Include="Site.Master" />
+    <Content Include="UI\Site.Master" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -149,83 +149,87 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestRequestEntryUI.aspx" />
-    <Content Include="TestTypeUI.aspx" />
-    <Content Include="TestUI.aspx" />
-    <Content Include="TestWiseReportUI.aspx" />
-    <Content Include="TypeWiseReportUI.aspx" />
-    <Content Include="UnpaidBillReportUI.aspx" />
+    <Content Include="UI\TestRequestEntryUI.aspx" />
+    <Content Include="UI\TestTypeUI.aspx" />
+    <Content Include="UI\TestUI.aspx" />
+    <Content Include="UI\TestWiseReportUI.aspx" />
+    <Content Include="UI\TypeWiseReportUI.aspx" />
+    <Content Include="UI\UnpaidBillReportUI.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Home.aspx.cs">
+    <Compile Include="UI\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
+    <Compile Include="UI\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\TestType.cs" />
-    <Compile Include="PaymentUI.aspx.cs">
+    <Compile Include="UI\PaymentUI.aspx.cs">
       <DependentUpon>PaymentUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PaymentUI.aspx.designer.cs">
+    <Compile Include="UI\PaymentUI.aspx.designer.cs">
       <DependentUpon>PaymentUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
+    <Compile Include="UI\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
+    <Compile Include="UI\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="TestRequestEntryUI.aspx.cs">
+    <Compile Include="UI\TestRequestEntryUI.aspx.cs">
       <DependentUpon>TestRequestEntryUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestRequestEntryUI.aspx.designer.cs">
+    <Compile Include="UI\TestRequestEntryUI.aspx.designer.cs">
       <DependentUpon>TestRequestEntryUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestTypeUI.aspx.cs">
+    <Compile Include="UI\TestTypeUI.aspx.cs">
       <DependentUpon>TestTypeUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestTypeUI.aspx.designer.cs">
+    <Compile Include="UI\TestTypeUI.aspx.designer.cs">
       <DependentUpon>TestTypeUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestUI.aspx.cs">
+    <Compile Include="UI\TestUI.aspx.cs">
       <DependentUpon>TestUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestUI.aspx.designer.cs">
+    <Compile Include="UI\TestUI.aspx.designer.cs">
       <DependentUpon>TestUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestWiseReportUI.aspx.cs">
+    <Compile Include="UI\TestWiseReportUI.aspx.cs">
       <DependentUpon>TestWiseReportUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestWiseReportUI.aspx.designer.cs">
+    <Compile Include="UI\TestWiseReportUI.aspx.designer.cs">
       <DependentUpon>TestWiseReportUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TypeWiseReportUI.aspx.cs">
+    <Compile Include="UI\TypeWiseReportUI.aspx.cs">
       <DependentUpon>TypeWiseReportUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TypeWiseReportUI.aspx.designer.cs">
+    <Compile Include="UI\TypeWiseReportUI.aspx.designer.cs">
       <DependentUpon>TypeWiseReportUI.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UnpaidBillReportUI.aspx.cs">
+    <Compile Include="UI\UnpaidBillReportUI.aspx.cs">
       <DependentUpon>UnpaidBillReportUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UnpaidBillReportUI.aspx.designer.cs">
+    <Compile Include="UI\UnpaidBillReportUI.aspx.designer.cs">
       <DependentUpon>UnpaidBillReportUI.aspx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="DAL\Gateway\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
