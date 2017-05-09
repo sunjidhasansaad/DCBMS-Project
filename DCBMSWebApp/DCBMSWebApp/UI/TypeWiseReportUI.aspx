@@ -10,9 +10,9 @@
     <script>
         $(function() {
             var dateFormat = "dd/mm/yy",
-                from = $("#<%= fromDateNameTextBox.ClientID %>")
+                from = $("#<%= fromDateTextBox.ClientID %>")
                     .datepicker({
-                        dateFormat: 'dd/mm/yy',
+                        dateFormat: 'mm/dd/yy',
                         defaultDate: "+1w",
                         changeMonth: true,
                         changeYear: true,
@@ -22,7 +22,7 @@
                         to.datepicker("option", "minDate", getDate(this));
                     }),
                 to = $("#<%= toDateTextBox.ClientID %>").datepicker({
-                        dateFormat: 'dd/mm/yy',
+                        dateFormat: 'mm/dd/yy',
                         defaultDate: "+1w",
                         changeMonth: true,
                         changeYear: true,
@@ -57,7 +57,7 @@
             <legend>Type Wise Report:</legend>
 
             <asp:Label ID="Label1" runat="server" Text="From Date"></asp:Label>
-            <asp:TextBox ID="fromDateNameTextBox" runat="server"></asp:TextBox>
+            <asp:TextBox ID="fromDateTextBox" runat="server"></asp:TextBox>
 
             <asp:Label ID="Label2" runat="server" Text="To Date"></asp:Label>
             <asp:TextBox ID="toDateTextBox" runat="server"></asp:TextBox>
