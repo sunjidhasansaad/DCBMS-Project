@@ -14,6 +14,7 @@
                     .datepicker({
                         dateFormat: 'mm/dd/yy',
                         defaultDate: "+1w",
+                        maxDate: "+0M +0D",
                         changeMonth: true,
                         changeYear: true,
                         numberOfMonths: 1
@@ -24,6 +25,7 @@
                 to = $("#<%= toDateTextBox.ClientID %>").datepicker({
                     dateFormat: 'mm/dd/yy',
                     defaultDate: "+1w",
+                    maxDate: "+0M +0D",
                     changeMonth: true,
                     changeYear: true,
                     numberOfMonths: 1
