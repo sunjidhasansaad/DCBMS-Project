@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="Report" Language="C#" MasterPageFile="~/UI/Site.Master" AutoEventWireup="true" CodeBehind="TypeWiseReportUI.aspx.cs" Inherits="DCBMSWebApp.UI.TypeWiseReportUI" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Assets/css/form.css" rel="stylesheet"/>
-    <link href="Content/themes/base/jquery-ui.css" rel="stylesheet"/>
-    <script src="Scripts/jquery-1.12.4.js"></script>
-    <script src="Scripts/jquery-ui-1.12.1.js"></script>
+     <link href="../Assets/css/form.css" rel="stylesheet" />
+    <link href="../Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.12.4.js"></script>
+    <script src="../Scripts/jquery-ui-1.12.1.js"></script>
+
 
     <script>
         $(function() {

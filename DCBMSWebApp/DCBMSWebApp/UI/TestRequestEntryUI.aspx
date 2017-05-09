@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="Test Entry Page" Language="C#" MasterPageFile="~/UI/Site.Master" AutoEventWireup="true" CodeBehind="TestRequestEntryUI.aspx.cs" Inherits="DCBMSWebApp.UI.TestRequestEntryUI" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   
+    <link href="../Assets/css/form.css" rel="stylesheet" />
+    <link href="../Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.12.4.js"></script>
+    <script src="../Scripts/jquery-ui-1.12.1.js"></script>
+
     
-    <link href="Assets/css/form.css" rel="stylesheet" />
-    <link href="Content/themes/base/jquery-ui.css" rel="stylesheet" />
-    <script src="Scripts/jquery-1.12.4.js"></script>
-    <script src="Scripts/jquery-ui-1.12.1.js"></script>
 
     <script>
         $(function() {

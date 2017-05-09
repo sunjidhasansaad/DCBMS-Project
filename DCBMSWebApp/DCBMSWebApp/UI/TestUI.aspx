@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Setup Page" Language="C#" MasterPageFile="~/UI/Site.Master" AutoEventWireup="true" CodeBehind="TestUI.aspx.cs" Inherits="DCBMSWebApp.UI.TestUI" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Assets/css/form.css" rel="stylesheet"/>
+    
+    <link href="../Assets/css/form.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
