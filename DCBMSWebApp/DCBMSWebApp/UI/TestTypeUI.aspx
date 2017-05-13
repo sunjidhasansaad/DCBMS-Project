@@ -49,8 +49,20 @@
 
             <div class="panel-body form-horizontal">
 
-                <asp:GridView ID="typeListGridView" runat="server">
-                    
+                <asp:GridView ID="typeListGridView" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:TemplateField HeaderText="SL No.">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Container.DataItemIndex + 1 %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Type">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
                 </asp:GridView>
             </div>
 
