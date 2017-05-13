@@ -34,6 +34,8 @@ namespace DCBMSWebApp.UI
             validationLabel.Text = _testTypeManager.Save(testType);
 
             ShowTypeInGridView();
+
+            typeTextBox.Text = "";
         }
     }
 }

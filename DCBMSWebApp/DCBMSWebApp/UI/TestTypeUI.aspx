@@ -28,7 +28,7 @@
                     </div>
 
                 </div>
-                <asp:Label ID="validationLabel" runat="server" Text=""></asp:Label>
+                <asp:Label ID="validationLabel" runat="server" ForeColor="Red"></asp:Label>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="typeTextBox" ErrorMessage="Type Name is Required!!!" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="typeRegularExpressionValidator" runat="server"
                                                 ControlToValidate="typeTextBox"
@@ -49,7 +49,7 @@
 
             <div class="panel-body form-horizontal">
 
-                <asp:GridView ID="typeListGridView" runat="server" AutoGenerateColumns="False" Width="80%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                <asp:GridView ID="typeListGridView" runat="server" AutoGenerateColumns="False" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                     <Columns>
                         <asp:TemplateField HeaderText="SL No.">
                             <ItemTemplate>
@@ -57,7 +57,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Type">
+                        <asp:TemplateField HeaderText="Type" ItemStyle-Width="80%">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
                             </ItemTemplate>
