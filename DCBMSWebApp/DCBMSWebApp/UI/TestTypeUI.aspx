@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-6 "></div>
                     <div class="col-md-6">
-                        <asp:Button ID="saveButton" runat="server" Text="Save" BackColor="#214761" ForeColor="White" />
+                        <asp:Button ID="saveButton" runat="server" Text="Save" BackColor="#214761" ForeColor="White" OnClick="saveButton_OnClick"/>
                     </div>
 
                 </div>
@@ -49,7 +49,9 @@
 
             <div class="panel-body form-horizontal">
 
-                
+                <asp:GridView ID="typeListGridView" runat="server">
+                    
+                </asp:GridView>
             </div>
 
         </div>
