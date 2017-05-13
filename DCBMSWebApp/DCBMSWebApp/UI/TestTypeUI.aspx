@@ -49,7 +49,7 @@
 
             <div class="panel-body form-horizontal">
 
-                <asp:GridView ID="typeListGridView" runat="server" AutoGenerateColumns="False">
+                <asp:GridView ID="typeListGridView" runat="server" AutoGenerateColumns="False" Width="80%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                     <Columns>
                         <asp:TemplateField HeaderText="SL No.">
                             <ItemTemplate>
@@ -63,6 +63,23 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
+
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                    <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                    <RowStyle ForeColor="#000066"></RowStyle>
+
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                    <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                    <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                    <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                    <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
                 </asp:GridView>
             </div>
 

@@ -11,12 +11,20 @@ namespace DCBMSWebApp.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ShowTypeInGridView();
+            }
+            
+        }
+
+        protected void ShowTypeInGridView()
+        {
             List<TestType> typeList = _testTypeManager.GetAll();
 
             typeListGridView.DataSource = typeList;
             typeListGridView.DataBind();
         }
-
         protected void saveButton_OnClick(object sender, EventArgs e)
         {
             TestType testType = new TestType();
@@ -24,6 +32,8 @@ namespace DCBMSWebApp.UI
             testType.Name = typeTextBox.Text;
 
             validationLabel.Text = _testTypeManager.Save(testType);
+
+            ShowTypeInGridView();
         }
     }
 }
