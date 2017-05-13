@@ -87,5 +87,24 @@ namespace DCBMSWebApp.DAL.Gateway
             connection.Close();
             return testList;
         }
+
+        public decimal GetFeeByTest(int testId)
+        {
+            decimal fee = 0;
+            string query = "select fee from Tests where Id = ('" + testId + "')";
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = connectionString;
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+            SqlDataReader dataReader = command.ExecuteReader();
+            dataReader.Read();
+            if (dataReader.HasRows)
+            {
+                fee = (decimal)dataReader["Fee"];
+            }
+            return fee;
+        }
     }
 }

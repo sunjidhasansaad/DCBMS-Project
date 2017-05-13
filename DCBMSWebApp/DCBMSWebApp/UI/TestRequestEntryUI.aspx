@@ -48,7 +48,7 @@
 
                 <br/>
                 <asp:Label ID="Label4" runat="server" Text="Select Test"></asp:Label>
-                <asp:DropDownList ID="testDropDownList" runat="server" ></asp:DropDownList>
+                <asp:DropDownList ID="testDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="testDropDownList_OnSelectedIndexChanged"></asp:DropDownList>
 
                 <div class="row">
                     <div class="col-md-6"></div>
@@ -62,8 +62,9 @@
 
                 <div>
                     
-                        <asp:Button ID="addButton" runat="server" Text="ADD"  BorderStyle="Solid" BackColor="#214761" Font-Bold="True" Font-Size="Medium" ForeColor="White" ToolTip="Add in table" Width="30%" style="float: right;"/>
-                   
+                        <asp:Button ID="addButton" runat="server" Text="ADD"  BorderStyle="Solid" BackColor="#214761" Font-Bold="True" Font-Size="Medium" ForeColor="White" ToolTip="Add in table" Width="30%" style="float: right;" OnClick="addButton_OnClick"/>
+                    <br/>
+                    <asp:Label ID="validationLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
                 </div>
             </fieldset>
         </div>
@@ -74,10 +75,56 @@
         <div class="panel-body form-horizontal">
             
 
-            
+            <div>
+                <asp:GridView ID="addTestGridView" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" AutoGenerateColumns="False" Width="100%">
+                    <Columns>
+                        <asp:TemplateField HeaderText="SL No" ItemStyle-Width="100">
+                            <ItemTemplate>
+                                <asp:Label ID="lblRowNumber" Text='<%# Container.DataItemIndex + 1 %>' runat="server" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Test">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Fee">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Fee") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
 
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
 
-            <asp:Button ID="saveButton" runat="server" Text="Save" BackColor="#214761"  ForeColor="White" style="float: right;" Width="20%" Font-Size="Medium" Font-Bold="True"/>
+                    <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                    <RowStyle ForeColor="#000066"></RowStyle>
+
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                    <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                    <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                    <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                    <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
+                </asp:GridView>
+            </div>
+            <br/>
+        <div align="right">
+            <asp:Label ID="Label6" runat="server" Text="Total Amount"></asp:Label>
+            <asp:TextBox ID="totalAmountTextBox" runat="server" ReadOnly="True"></asp:TextBox>
         </div>
+        
+        <br/>
+
+            <asp:Button ID="saveButton" runat="server" Text="Save" BackColor="#214761"  ForeColor="White" style="float: right;" Width="20%" Font-Size="Medium" Font-Bold="True" OnClick="saveButton_OnClick"/>
+        </div>
+    </div>
+    <div align="center">
+        <asp:Label ID="notificationLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
     </div>
 </asp:Content>

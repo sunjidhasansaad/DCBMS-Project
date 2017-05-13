@@ -5,6 +5,7 @@ using System.Web;
 
 namespace DCBMSWebApp.Models
 {
+    [Serializable]
     public class Bill
     {
         public int Id { get; set; }

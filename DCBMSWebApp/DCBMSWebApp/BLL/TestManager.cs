@@ -34,5 +34,13 @@ namespace DCBMSWebApp.BLL
         {
             return _testGateway.GetAllWithType();
         }
+        public decimal GetFeeByTest(int testId)
+        {
+            return _testGateway.GetFeeByTest(testId);
+        }
+        public bool IsTestExist(Test test)
+        {
+            return _testGateway.IsTestExist(test);
+        }
     }
 }

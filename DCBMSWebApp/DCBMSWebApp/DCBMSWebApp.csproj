@@ -158,10 +158,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BillManager.cs" />
+    <Compile Include="BLL\PatientManager.cs" />
+    <Compile Include="BLL\TestBillManager.cs" />
     <Compile Include="BLL\TestManager.cs" />
     <Compile Include="BLL\TestTypeManager.cs" />
+    <Compile Include="DAL\Gateway\BillGateway.cs" />
+    <Compile Include="DAL\Gateway\PatientGateway.cs" />
+    <Compile Include="DAL\Gateway\TestBillGateway.cs" />
     <Compile Include="DAL\Gateway\TestGateway.cs" />
     <Compile Include="DAL\Gateway\TestTypeGateway.cs" />
+    <Compile Include="DAL\Models\TestBillVM.cs" />
     <Compile Include="DAL\Models\TestWithTypeVM.cs" />
     <Compile Include="UI\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

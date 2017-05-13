@@ -5,6 +5,7 @@ using System.Web;
 
 namespace DCBMSWebApp.DAL.Models
 {
+    [Serializable]
     public class TestWithTypeVM
     {
         public int Id { get; set; }
