@@ -75,7 +75,33 @@
         <div class="panel-body form-horizontal">
 
             <div>
-                
+                <asp:GridView ID="testListGridView" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:TemplateField HeaderText="SL No.">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Container.DataItemIndex + 1 %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Test Name" ItemStyle-Width="80%">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        
+                         <asp:TemplateField HeaderText="Fee" ItemStyle-Width="80%">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Fee") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                         <asp:TemplateField HeaderText="Type" ItemStyle-Width="80%">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Type") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
 
             </div>
 
