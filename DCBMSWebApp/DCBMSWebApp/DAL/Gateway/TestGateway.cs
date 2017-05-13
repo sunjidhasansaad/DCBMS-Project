@@ -8,15 +8,15 @@ using DCBMSWebApp.Models;
 
 namespace DCBMSWebApp.DAL.Gateway
 {
-    public class TestTypeGateway
+    public class TestGateway
     {
         private string connectionString =
             WebConfigurationManager.ConnectionStrings["DCBMSConnectionString"].ConnectionString;
-        public int Save(TestType testType)
+        public int Save(Test test)
         {
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = @"INSERT INTO TestTypes(Type) VALUES('"
-                 + testType.Name + "')";
+            string query = @"INSERT INTO Tests(Name,Fee,TypeId) VALUES('"
+                 + test.Name + "','" + test.Fee + "','" + test.TypeId +  "')";
             SqlCommand command = new SqlCommand(query, connection);
 
             connection.Open();
@@ -25,10 +25,10 @@ namespace DCBMSWebApp.DAL.Gateway
             return rowAffected;
         }
 
-        public bool IsTypeExist(TestType testType)
+        public bool IsTestExist(Test test)
         {
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = @"SELECT * FROM TestTypes WHERE Type='" +testType.Name+ "';";
+            string query = @"SELECT * FROM Tests WHERE Name='" + test.Name + "';";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
@@ -38,27 +38,29 @@ namespace DCBMSWebApp.DAL.Gateway
             return isExist;
         }
 
-        public List<TestType> GetAll()
+        public List<Test> GetAll()
         {
-            List<TestType> typeList = new List<TestType>();
+            List<Test> testList = new List<Test>();
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = @"SELECT * FROM TestTypes";
+            string query = @"SELECT * FROM Tests";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                TestType testType = new TestType();
-                
-                testType.Id = (int)reader["Id"];
-                testType.Name = reader["Type"].ToString();
-                
-                typeList.Add(testType);
+                Test test = new Test();
+
+                test.Id = (int)reader["Id"];
+                test.Name = reader["Name"].ToString();
+                test.Fee = (decimal) reader["Fee"];
+                test.TypeId = (int) reader["TypeId"];
+
+                testList.Add(test);
             }
             reader.Close();
             connection.Close();
-            return typeList;
+            return testList;
         }
     }
 }
