@@ -165,10 +165,10 @@
     <Compile Include="UI\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bill.cs" />
-    <Compile Include="Models\Patient.cs" />
-    <Compile Include="Models\Test.cs" />
-    <Compile Include="Models\TestType.cs" />
+    <Compile Include="DAL\Models\Bill.cs" />
+    <Compile Include="DAL\Models\Patient.cs" />
+    <Compile Include="DAL\Models\Test.cs" />
+    <Compile Include="DAL\Models\TestType.cs" />
     <Compile Include="UI\PaymentUI.aspx.cs">
       <DependentUpon>PaymentUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
