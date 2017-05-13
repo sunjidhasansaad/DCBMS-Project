@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
+using DCBMSWebApp.DAL.Models;
 using DCBMSWebApp.Models;
 
 namespace DCBMSWebApp.DAL.Gateway
@@ -55,6 +56,30 @@ namespace DCBMSWebApp.DAL.Gateway
                 test.Name = reader["Name"].ToString();
                 test.Fee = (decimal) reader["Fee"];
                 test.TypeId = (int) reader["TypeId"];
+
+                testList.Add(test);
+            }
+            reader.Close();
+            connection.Close();
+            return testList;
+        }
+        public List<TestWithTypeVM> GetAllWithType()
+        {
+            List<TestWithTypeVM> testList = new List<TestWithTypeVM>();
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = @"SELECT * FROM TestWithType";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                TestWithTypeVM test = new TestWithTypeVM();
+
+                
+                test.Name = reader["Name"].ToString();
+                test.Fee = (decimal)reader["Fee"];
+                test.Type = reader["Type"].ToString();
 
                 testList.Add(test);
             }

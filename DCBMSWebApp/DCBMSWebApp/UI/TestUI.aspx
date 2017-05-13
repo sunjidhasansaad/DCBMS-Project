@@ -25,7 +25,7 @@
                 <div class="col-md-12">
                     <asp:RequiredFieldValidator ID="testNameRequiredFieldValidator" runat="server" ControlToValidate="testNameTextBox" ErrorMessage="Test Name is Required!!!" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="testNameRegularExpressionValidator" runat="server" ControlToValidate="testNameTextBox"
-                                                    ValidationExpression="[^0-9]+$" ErrorMessage=" Numbers are not allowed!!"/>
+                                                    ValidationExpression="[^0-9]+$" ErrorMessage=" Numbers are not allowed!!" ForeColor="Red" />
 
                 </div>
 
@@ -43,7 +43,7 @@
                 </div>
                 <asp:RequiredFieldValidator ID="feeRequiredFieldValidator" runat="server" ControlToValidate="feeTextBox" ErrorMessage="Fee is Required!!!" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="feeRegularExpressionValidator" runat="server" ControlToValidate="feeTextBox"
-                                                ValidationExpression="[+]?[0-9]*\.?[0-9]+" ErrorMessage="Enter valid amount!"/>
+                                                ValidationExpression="[+]?[0-9]*\.?[0-9]+" ErrorMessage="Enter valid amount!" ForeColor="Red" />
 
                 <div class="row">
 
@@ -57,10 +57,11 @@
                     </div>
 
                 </div>
-                <asp:Label ID="validationLabel" runat="server" Text=""></asp:Label>
+                <asp:Label ID="validationLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
+                <br />
                 <div class="col-md-8"></div>
                 <div class="col-md-4">
-                    <asp:Button ID="saveButton" runat="server" Text="Save"  BackColor="#214761" CssClass="button" ForeColor="White"/>
+                    <asp:Button ID="saveButton" runat="server" Text="Save"  BackColor="#214761" CssClass="button" ForeColor="White" OnClick="saveButton_OnClick"/>
                 </div>
 
             </fieldset>
@@ -75,7 +76,7 @@
         <div class="panel-body form-horizontal">
 
             <div>
-                <asp:GridView ID="testListGridView" runat="server" AutoGenerateColumns="False">
+                <asp:GridView ID="testListGridView" runat="server" AutoGenerateColumns="False" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                     <Columns>
                         <asp:TemplateField HeaderText="SL No.">
                             <ItemTemplate>
@@ -88,19 +89,36 @@
                                 <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        
-                         <asp:TemplateField HeaderText="Fee" ItemStyle-Width="80%">
+
+                        <asp:TemplateField HeaderText="Fee" ItemStyle-Width="80%">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Fee") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                         <asp:TemplateField HeaderText="Type" ItemStyle-Width="80%">
+                        <asp:TemplateField HeaderText="Type" ItemStyle-Width="80%">
                             <ItemTemplate>
                                 <asp:Label runat="server" Text='<%#Eval("Type") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
+
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                    <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                    <RowStyle ForeColor="#000066"></RowStyle>
+
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                    <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                    <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                    <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                    <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
                 </asp:GridView>
 
             </div>

@@ -32,7 +32,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="typeTextBox" ErrorMessage="Type Name is Required!!!" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="typeRegularExpressionValidator" runat="server"
                                                 ControlToValidate="typeTextBox"
-                                                ValidationExpression="[^0-9]+$" ErrorMessage=" Numbers are not allowed!!"/>
+                                                ValidationExpression="[^0-9]+$" ErrorMessage=" Numbers are not allowed!!" ForeColor="Red" />
 
                 
 

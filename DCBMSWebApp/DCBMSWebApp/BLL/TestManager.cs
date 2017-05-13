@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using DCBMSWebApp.DAL.Gateway;
+using DCBMSWebApp.DAL.Models;
 using DCBMSWebApp.Models;
 
 namespace DCBMSWebApp.BLL
@@ -27,6 +28,11 @@ namespace DCBMSWebApp.BLL
         public List<Test> GetAll()
         {
             return _testGateway.GetAll();
+        }
+
+        public List<TestWithTypeVM> GetAllWithType()
+        {
+            return _testGateway.GetAllWithType();
         }
     }
 }
