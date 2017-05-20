@@ -17,12 +17,12 @@ namespace DCBMSWebApp.DAL.Gateway
             DateTime date = new DateTime();
             SqlConnection connection = new SqlConnection(connectionString);
             string query = @"INSERT INTO Bills(BillNo,Date,TotalAmount,PaidAmount,DueAmount) VALUES('"
-                + bill.BillNo + "','" + @date + "','" + bill.TotalAmount + "','" + bill.PaidAmount + "','" + bill.DueAmount + "')";
+                + bill.BillNo + "','" + bill.Date.Date.ToString("yyyyMMdd") + "','" + bill.TotalAmount + "','" + bill.PaidAmount + "','" + bill.DueAmount + "')";
             SqlCommand command = new SqlCommand(query, connection);
 
 
             connection.Open();
-            command.Parameters.AddWithValue("@date", bill.Date);
+            
             int rowAffected = command.ExecuteNonQuery();
             connection.Close();
             return rowAffected;
