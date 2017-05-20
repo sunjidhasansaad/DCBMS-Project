@@ -16,7 +16,7 @@ namespace DCBMSWebApp.DAL.Gateway
         {
             SqlConnection connection = new SqlConnection(connectionString);
             string query = @"INSERT INTO Patients(Name,DateOfBirth,MobileNo,BillNo) VALUES('"
-                + aPatient.Name + "','" + aPatient.DateOfBirth + "','" + aPatient.MobileNo + "','" + aPatient.BillNo + "')";
+                + aPatient.Name + "','" + aPatient.DateOfBirth.Date.ToString("yyyyMMdd") + "','" + aPatient.MobileNo + "','" + aPatient.BillNo + "')";
             SqlCommand command = new SqlCommand(query, connection);
 
 
