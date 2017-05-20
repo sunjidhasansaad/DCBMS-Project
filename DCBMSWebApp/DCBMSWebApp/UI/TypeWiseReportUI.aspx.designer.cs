@@ -58,6 +58,24 @@ namespace DCBMSWebApp.UI {
         protected global::System.Web.UI.WebControls.Button showButton;
         
         /// <summary>
+        /// validationLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label validationLabel;
+        
+        /// <summary>
+        /// typeWiseReportGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView typeWiseReportGridView;
+        
+        /// <summary>
         /// pdfButton control.
         /// </summary>
         /// <remarks>

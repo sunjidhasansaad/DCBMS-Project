@@ -50,7 +50,41 @@ AND R.Date BETWEEN  '" + dateFrom + "' AND '" + dateTo + "'GROUP BY Tests.Name;"
             return testWiseReport;
         }
 
+        public List<TypeWiseReportVM> GetTypeWiseReport(string dateFrom, string dateTo)
+        {
+            List<TypeWiseReportVM> typeWiseReport = new List<TypeWiseReportVM>();
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = @"SELECT A1.Type TypeName,count(A2.TypeId) TotalTest,sum(A2.TotalAmount) TotalAmount
+FROM TestTypes AS A1
+LEFT OUTER JOIN V_Report AS A2 on A2.TypeId = A1.Id AND A2.Date BETWEEN  '" + dateFrom + "' AND '" + dateTo + "'GROUP BY A1.Type;";
 
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                TypeWiseReportVM test = new TypeWiseReportVM();
+
+
+                test.TypeName = reader["TypeName"].ToString();
+                test.TotalNoOfTest = (int)reader["TotalTest"];
+                if (reader["TotalAmount"] == DBNull.Value)
+                {
+                    test.TotalAmount = 0;
+                }
+                else
+                {
+                    test.TotalAmount = (decimal)reader["TotalAmount"];
+                }
+
+
+                typeWiseReport.Add(test);
+            }
+            reader.Close();
+            connection.Close();
+            return typeWiseReport;
+        }
         public List<UnpaidBillReportVM> UnpaidBillReport(string dateFrom, string dateTo)
         {
             List<UnpaidBillReportVM> unpaidBillReport = new List<UnpaidBillReportVM>();

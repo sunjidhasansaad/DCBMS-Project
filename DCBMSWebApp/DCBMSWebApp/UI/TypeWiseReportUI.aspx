@@ -65,8 +65,10 @@
             <asp:TextBox ID="toDateTextBox" runat="server"></asp:TextBox>
             
             <div>
-                <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;"/>
+                <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;" OnClick="showButton_OnClick"/>
             </div>
+            
+            <asp:Label ID="validationLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
         </fieldset>
 
     </div>
@@ -76,7 +78,52 @@
 
         <div class="panel-body form-horizontal">
             
-            
+            <asp:GridView ID="typeWiseReportGridView" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+
+                <Columns>
+                    <asp:TemplateField HeaderText="SL No." ItemStyle-Width="10%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Container.DataItemIndex + 1 %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Test Type Name" ItemStyle-Width="30%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("TypeName") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Total No of Test" ItemStyle-Width="30%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("TotalNoOfTest") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Total Amount" ItemStyle-Width="30%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("TotalAmount") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+
+                <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
+
+                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                <RowStyle ForeColor="#000066"></RowStyle>
+
+                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
+            </asp:GridView>
         </div>
          
          <br/>

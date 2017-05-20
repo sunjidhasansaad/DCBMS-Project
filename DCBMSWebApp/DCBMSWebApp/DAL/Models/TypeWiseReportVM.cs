@@ -5,10 +5,10 @@ using System.Web;
 
 namespace DCBMSWebApp.DAL.Models
 {
-    public class TypeWiseReport
+    public class TypeWiseReportVM
     {
         public string TypeName { get; set; }
-        public string TotalNoOfTest { get; set; }
-        public string TotalAmount { get; set; }
+        public int TotalNoOfTest { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }
