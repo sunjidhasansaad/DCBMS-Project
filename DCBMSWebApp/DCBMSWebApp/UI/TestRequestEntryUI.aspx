@@ -12,7 +12,7 @@
     <script>
         $(function() {
             $("#<%= dateOfBirthTextBox.ClientID %>").datepicker({
-                dateFormat: 'mm/dd/yy',
+                dateFormat: 'dd/mm/yy',
                 maxDate: "+0M +0D",
                 changeMonth: true,
                 changeYear: true
