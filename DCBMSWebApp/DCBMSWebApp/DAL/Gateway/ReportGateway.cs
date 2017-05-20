@@ -50,5 +50,33 @@ AND R.Date BETWEEN  '" + dateFrom + "' AND '" + dateTo + "'GROUP BY Tests.Name;"
             return testWiseReport;
         }
 
+
+        public List<UnpaidBillReportVM> UnpaidBillReport(string dateFrom, string dateTo)
+        {
+            List<UnpaidBillReportVM> unpaidBillReport = new List<UnpaidBillReportVM>();
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = @"SELECT Patients.BillNo,Patients.MobileNo,Patients.Name,Bills.TotalAmount From Patients,Bills  WHERE Patients.BillNo = Bills.BillNo AND Bills.PaidAmount<>Bills.TotalAmount AND Bills.Date  BETWEEN '" + dateFrom + "' AND '" + dateTo + "'ORDER BY Patients.Name;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                UnpaidBillReportVM report = new UnpaidBillReportVM();
+
+
+                report.BillNo = reader["BillNo"].ToString();
+                report.ContactNo = (int)reader["MobileNo"];
+                report.PatientName = reader["Name"].ToString();
+                report.BillAmount = (decimal)reader["TotalAmount"];
+
+                unpaidBillReport.Add(report);
+            }
+            reader.Close();
+            connection.Close();
+            return unpaidBillReport;
+        }
+    
     }
 }

@@ -59,13 +59,18 @@
 
             <asp:Label ID="Label1" runat="server" Text="From Date"></asp:Label>
             <asp:TextBox ID="fromDateTextBox" runat="server"></asp:TextBox>
-
+            <asp:RequiredFieldValidator ID="dateFromRequiredFieldValidator" runat="server" ControlToValidate="fromDateTextBox" ErrorMessage="Enter Date Range!" ForeColor="Red"></asp:RequiredFieldValidator>
+            
+            <br/>
             <asp:Label ID="Label2" runat="server" Text="To Date"></asp:Label>
             <asp:TextBox ID="toDateTextBox" runat="server"></asp:TextBox>
-            
+            <asp:RequiredFieldValidator ID="dateToRequiredFieldValidator" runat="server" ControlToValidate="toDateTextBox" ErrorMessage="Enter Date Range!" ForeColor="Red"></asp:RequiredFieldValidator>
+
             <div>
-                <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;"/>
+                <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;" OnClick="showButton_OnClick"/>
             </div>
+            <asp:Label ID="validationLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
+
         </fieldset>
 
     </div>
@@ -75,7 +80,58 @@
 
         <div class="panel-body form-horizontal">
             
-            
+            <asp:GridView ID="unpaidBillReportGridView" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                <Columns>
+                    <asp:TemplateField HeaderText="SL No." ItemStyle-Width="10%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Container.DataItemIndex + 1 %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Bill Number" ItemStyle-Width="25%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("BillNo") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Contact No" ItemStyle-Width="20%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("ContactNo") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Patient Name" ItemStyle-Width="35%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("PatientName") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Bill Amount" ItemStyle-Width="15%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("BillAmount") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                </Columns>
+                <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
+
+                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                <RowStyle ForeColor="#000066"></RowStyle>
+
+                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
+            </asp:GridView>
+
         </div>
          
          <br/>
