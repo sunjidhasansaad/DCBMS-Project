@@ -11,7 +11,7 @@ namespace DCBMSWebApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int MobileNo { get; set; }
+        public string MobileNo { get; set; }
         public string BillNo { get; set; }
 
     }

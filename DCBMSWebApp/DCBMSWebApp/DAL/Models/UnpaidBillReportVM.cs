@@ -8,7 +8,7 @@ namespace DCBMSWebApp.DAL.Models
     public class UnpaidBillReportVM
     {
         public string BillNo { get; set; }
-        public int ContactNo { get; set; }
+        public string ContactNo { get; set; }
         public string PatientName { get; set; }
         public decimal BillAmount { get; set; }
 

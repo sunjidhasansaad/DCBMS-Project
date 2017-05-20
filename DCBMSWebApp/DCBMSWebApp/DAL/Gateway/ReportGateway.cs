@@ -67,7 +67,7 @@ AND R.Date BETWEEN  '" + dateFrom + "' AND '" + dateTo + "'GROUP BY Tests.Name;"
 
 
                 report.BillNo = reader["BillNo"].ToString();
-                report.ContactNo = (int)reader["MobileNo"];
+                report.ContactNo = reader["MobileNo"].ToString();
                 report.PatientName = reader["Name"].ToString();
                 report.BillAmount = (decimal)reader["TotalAmount"];
 

@@ -109,7 +109,7 @@ namespace DCBMSWebApp.UI
 
                 aPatient.Name = patientNameTextBox.Text;
                 aPatient.DateOfBirth = Convert.ToDateTime(dateOfBirthTextBox.Text);
-                aPatient.MobileNo = Convert.ToInt32(mobileNoTextBox.Text);
+                aPatient.MobileNo = mobileNoTextBox.Text;
                 aPatient.BillNo = aBill.BillNo;
 
                 patientNameTextBox.Text = String.Empty;
