@@ -31,6 +31,15 @@ namespace DCBMSWebApp.UI {
         protected global::System.Web.UI.WebControls.TextBox fromDateTextBox;
         
         /// <summary>
+        /// fromDateRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fromDateRequiredFieldValidator;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace DCBMSWebApp.UI {
         protected global::System.Web.UI.WebControls.TextBox toDateTextBox;
         
         /// <summary>
+        /// toDateRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator toDateRequiredFieldValidator;
+        
+        /// <summary>
         /// showButton control.
         /// </summary>
         /// <remarks>
@@ -56,6 +74,24 @@ namespace DCBMSWebApp.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button showButton;
+        
+        /// <summary>
+        /// validationLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label validationLabel;
+        
+        /// <summary>
+        /// testWiseReportGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView testWiseReportGridView;
         
         /// <summary>
         /// pdfButton control.

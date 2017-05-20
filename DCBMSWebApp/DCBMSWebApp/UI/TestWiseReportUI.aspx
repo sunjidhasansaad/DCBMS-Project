@@ -60,13 +60,17 @@
 
             <asp:Label ID="Label1" runat="server" Text="From Date"></asp:Label>
             <asp:TextBox ID="fromDateTextBox" runat="server"></asp:TextBox>
-
+            <asp:RequiredFieldValidator ID="fromDateRequiredFieldValidator" runat="server" ControlToValidate="fromDateTextBox" ErrorMessage="Date range is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+            
+            <br />
             <asp:Label ID="Label2" runat="server" Text="To Date"></asp:Label>
             <asp:TextBox ID="toDateTextBox" runat="server"></asp:TextBox>
-            
+            <asp:RequiredFieldValidator ID="toDateRequiredFieldValidator" runat="server" ControlToValidate="toDateTextBox" ErrorMessage="Date range is Required" ForeColor="Red"></asp:RequiredFieldValidator>
+
             <div>
-                <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;"/>
+                <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;" OnClick="showButton_OnClick"/>
             </div>
+            <asp:Label ID="validationLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
         </fieldset>
 
     </div>
@@ -76,7 +80,51 @@
 
         <div class="panel-body form-horizontal">
             
-            
+            <asp:GridView ID="testWiseReportGridView" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                <Columns>
+                    <asp:TemplateField HeaderText="SL No.">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Container.DataItemIndex + 1 %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Test Name" ItemStyle-Width="80%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("TestName") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Total No of Test" ItemStyle-Width="80%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("TotalTest") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Total Amount" ItemStyle-Width="80%">
+                        <ItemTemplate>
+                            <asp:Label runat="server" Text='<%#Eval("TotalAmount") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
+
+                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                <RowStyle ForeColor="#000066"></RowStyle>
+
+                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
+            </asp:GridView>
+
         </div>
          
          <br/>
