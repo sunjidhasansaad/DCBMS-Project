@@ -60,10 +60,13 @@
 
             <asp:Label ID="Label1" runat="server" Text="From Date"></asp:Label>
             <asp:TextBox ID="fromDateTextBox" runat="server"></asp:TextBox>
-
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="fromDateTextBox" ErrorMessage="Date is required!" ForeColor="Red"></asp:RequiredFieldValidator>
+            
+            <br />
             <asp:Label ID="Label2" runat="server" Text="To Date"></asp:Label>
             <asp:TextBox ID="toDateTextBox" runat="server"></asp:TextBox>
-            
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="toDateTextBox" ErrorMessage="Date is required!" ForeColor="Red"></asp:RequiredFieldValidator>
+
             <div>
                 <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;" OnClick="showButton_OnClick"/>
             </div>
