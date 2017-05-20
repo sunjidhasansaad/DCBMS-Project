@@ -65,7 +65,8 @@
     <Content Include="Assets\css\form.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\img\logo.jpg" />
+    <Content Include="Assets\img\welcomePage.jpg" />
     <Content Include="Assets\js\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
