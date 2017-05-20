@@ -42,7 +42,7 @@ namespace DCBMSWebApp.DAL.Gateway
         {
             List<TestType> typeList = new List<TestType>();
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = @"SELECT * FROM TestTypes";
+            string query = @"SELECT * FROM TestTypes ORDER BY Type";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
