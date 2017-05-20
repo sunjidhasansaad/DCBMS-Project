@@ -118,7 +118,7 @@
 
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 text-center">
             &copy; <%: DateTime.Now.Year %> | Design by: Optimistic
         </div>
     </div>
