@@ -43,7 +43,7 @@ namespace DCBMSWebApp.DAL.Gateway
         {
             List<Test> testList = new List<Test>();
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = @"SELECT * FROM Tests";
+            string query = @"SELECT * FROM Tests ORDER BY Name";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
@@ -67,7 +67,7 @@ namespace DCBMSWebApp.DAL.Gateway
         {
             List<TestWithTypeVM> testList = new List<TestWithTypeVM>();
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = @"SELECT * FROM TestWithType";
+            string query = @"SELECT * FROM TestWithType ORDER BY Name";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
