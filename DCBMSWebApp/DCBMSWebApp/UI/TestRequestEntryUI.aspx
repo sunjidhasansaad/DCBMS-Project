@@ -37,7 +37,8 @@
 
                 <asp:TextBox ID="dateOfBirthTextBox" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="DOBRequiredFieldValidator" runat="server" ControlToValidate="dateOfBirthTextBox" ErrorMessage="Date of Birth is Required!!!" ForeColor="Red"></asp:RequiredFieldValidator>
-                
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" ControlToValidate="dateOfBirthTextBox" ErrorMessage="Vaild date format is dd/mm/yyyy" ForeColor="Red"></asp:RegularExpressionValidator>
+
                 <br/>
                 <asp:Label ID="Label3" runat="server" Text="Mobile No"></asp:Label>
                 <asp:TextBox ID="mobileNoTextBox" runat="server"></asp:TextBox>
