@@ -82,7 +82,7 @@ namespace DCBMSWebApp.UI
             dt.Columns.AddRange(new DataColumn[4]
             {
                 new DataColumn("Sl No",typeof(int)),
-                new DataColumn("Test Name",typeof(string)),
+                new DataColumn("Test Type Name",typeof(string)),
                 new DataColumn("Total No. of Test",typeof(int)),
                 new DataColumn("Total Amount",typeof(decimal))
             });

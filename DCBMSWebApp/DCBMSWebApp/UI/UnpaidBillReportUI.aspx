@@ -137,7 +137,7 @@
          <br/>
          <div class="row">
              <div class="col-md-4">
-                 <asp:Button ID="pdfButton" runat="server" Text="PDF" BackColor="#214761" Font-Size="Medium" ForeColor="White" style="float: right;" Width="60%" />
+                 <asp:Button ID="pdfButton" runat="server" Text="PDF" BackColor="#214761" Font-Size="Medium" ForeColor="White" style="float: right;" Width="60%" OnClick="pdfButton_OnClick"/>
              </div>
              <div class="col-md-4 text-right">
                  <asp:Label ID="Label3" runat="server" Text="Total"></asp:Label>
