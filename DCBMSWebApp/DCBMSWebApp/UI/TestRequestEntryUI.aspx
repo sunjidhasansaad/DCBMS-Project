@@ -44,7 +44,7 @@
                 <asp:RequiredFieldValidator ID="mobileRequiredFieldValidator" runat="server" ControlToValidate="mobileNoTextBox" ErrorMessage="Mobile No is Required!!" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="mobileRegularExpressionValidator" runat="server" 
       ControlToValidate="mobileNoTextBox" ErrorMessage=" Enter Valid Mobile Number!!" 
-    ValidationExpression="[0-9]{11}"></asp:RegularExpressionValidator>
+    ValidationExpression="[0-9]{11}" ForeColor="Red"></asp:RegularExpressionValidator>
 
                 <br/>
                 <asp:Label ID="Label4" runat="server" Text="Select Test"></asp:Label>
