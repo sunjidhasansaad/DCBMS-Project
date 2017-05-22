@@ -51,6 +51,17 @@ namespace DCBMSWebApp.UI
             if (!IsPostBack)
             {
                 GetTestDropDownList();
+                Session["isSaved"] = false;
+            }
+            if (Session["isSaved"].Equals(true))
+            {
+                ViewState["testList"] = null;
+                ViewState["total"] = null;
+                testList = new List<Test>();
+
+                totalAmountTextBox.Text = "";
+                addTestGridView.DataSource = testList;
+                addTestGridView.DataBind();
             }
         }
 
@@ -139,7 +150,7 @@ namespace DCBMSWebApp.UI
                         _testBillManager.Save(testBillVm);
                     }
 
-
+                    Session["isSaved"] = true;
                     GeneratePdf(aBill.BillNo, aBill.Date);
                 }
                 else
