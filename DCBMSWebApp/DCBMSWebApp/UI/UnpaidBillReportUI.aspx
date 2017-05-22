@@ -60,11 +60,13 @@
             <asp:Label ID="Label1" runat="server" Text="From Date"></asp:Label>
             <asp:TextBox ID="fromDateTextBox" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="dateFromRequiredFieldValidator" runat="server" ControlToValidate="fromDateTextBox" ErrorMessage="Enter Date Range!" ForeColor="Red"></asp:RequiredFieldValidator>
-            
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="fromDateTextBox" ValidationExpression="^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$" ErrorMessage=" Valid Date Format mm/dd/yyyy" ForeColor="Red"></asp:RegularExpressionValidator>
+
             <br/>
             <asp:Label ID="Label2" runat="server" Text="To Date"></asp:Label>
             <asp:TextBox ID="toDateTextBox" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="dateToRequiredFieldValidator" runat="server" ControlToValidate="toDateTextBox" ErrorMessage="Enter Date Range!" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="toDateTextBox" ValidationExpression="^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$" ErrorMessage=" Valid Date Format mm/dd/yyyy" ForeColor="Red"></asp:RegularExpressionValidator>
 
             <div>
                 <asp:Button ID="showButton" runat="server" Text="Show"  BackColor="#214761" Font-Size="Medium" ForeColor="White" Width="30%" style="float: right;" OnClick="showButton_OnClick"/>
