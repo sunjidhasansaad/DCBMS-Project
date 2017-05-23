@@ -161,12 +161,14 @@
   <ItemGroup>
     <Compile Include="BLL\BillManager.cs" />
     <Compile Include="BLL\PatientManager.cs" />
+    <Compile Include="BLL\PaymentManager.cs" />
     <Compile Include="BLL\ReportManager.cs" />
     <Compile Include="BLL\TestBillManager.cs" />
     <Compile Include="BLL\TestManager.cs" />
     <Compile Include="BLL\TestTypeManager.cs" />
     <Compile Include="DAL\Gateway\BillGateway.cs" />
     <Compile Include="DAL\Gateway\PatientGateway.cs" />
+    <Compile Include="DAL\Gateway\PaymentGateway.cs" />
     <Compile Include="DAL\Gateway\ReportGateway.cs" />
     <Compile Include="DAL\Gateway\TestBillGateway.cs" />
     <Compile Include="DAL\Gateway\TestGateway.cs" />

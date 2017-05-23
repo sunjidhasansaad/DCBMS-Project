@@ -12,13 +12,11 @@
                 <legend>Pay Bill:</legend>
                 <asp:Label ID="Label1" runat="server" Text="Bill No"></asp:Label>
                 <asp:TextBox ID="billNoTextBox" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="billNoTextBox" runat="server" ErrorMessage="Please Enter Bill No"></asp:RequiredFieldValidator>
-                
-                
+                 
                 <div>
-                    <asp:Button ID="searchButton" runat="server" Text="Search" BackColor="#214761" ForeColor="White" Width="40%" style="float: right;"/>
+                    <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_OnClick" BackColor="#214761" ForeColor="White" Width="40%" style="float: right;"/>
                 </div>
-                <asp:Label ID="validationLabel" runat="server" Text=""></asp:Label>
+                <asp:Label ID="validationLabel" runat="server" ForeColor="red" Text=""></asp:Label>
 
             </fieldset>
         </div>
@@ -30,9 +28,43 @@
         <div class="panel-body form-horizontal">
 
             <div>
+                    <asp:GridView ID="testListGridView" runat="server" AutoGenerateColumns="False" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+                    <Columns>
+                        <asp:TemplateField HeaderText="SL No.">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Container.DataItemIndex + 1 %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
 
-                <asp:GridView ID="testListGridView" runat="server"></asp:GridView>
-            
+                        <asp:TemplateField HeaderText="Type" ItemStyle-Width="80%">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Name") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                         <asp:TemplateField HeaderText="Type" ItemStyle-Width="80%">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Fee") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066"></FooterStyle>
+
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White"></HeaderStyle>
+
+                    <PagerStyle HorizontalAlign="Left" BackColor="White" ForeColor="#000066"></PagerStyle>
+
+                    <RowStyle ForeColor="#000066"></RowStyle>
+
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                    <SortedAscendingCellStyle BackColor="#F1F1F1"></SortedAscendingCellStyle>
+
+                    <SortedAscendingHeaderStyle BackColor="#007DBB"></SortedAscendingHeaderStyle>
+
+                    <SortedDescendingCellStyle BackColor="#CAC9C9"></SortedDescendingCellStyle>
+
+                    <SortedDescendingHeaderStyle BackColor="#00547E"></SortedDescendingHeaderStyle>
+                </asp:GridView>
 
             </div>
 
@@ -81,16 +113,17 @@
                         </div>
                         <div class="col-md-3">
                             <asp:TextBox ID="payAmountTextBox" runat="server"></asp:TextBox>
+                          
                             <asp:RegularExpressionValidator ID="feeRegularExpressionValidator" runat="server" ControlToValidate="payAmountTextBox"
-                                                ValidationExpression="((\d+)((\.\d{1,2})?))$" ErrorMessage="Enter valid amount!" ForeColor="Red"/>
+                                                ValidationExpression="[+]?[0-9]*\.?[0-9]+" ErrorMessage="Enter valid amount!"/>
                     
                         </div>
                         </div>
                     <br/>
-                    <asp:Button ID="payButton" runat="server" Text="Pay" BackColor="#214761" Font-Bold="True" Font-Size="Medium" ForeColor="White" Width="20%" style="float: right;"/>
-                    
-                </div>
+                    <asp:Button ID="payButton" runat="server" Text="Pay" BackColor="#214761" Font-Bold="True" Font-Size="Medium" OnClick="payButton_OnClick" ForeColor="White" Width="20%" style="float: right;"/>
 
+                </div>
+                    <asp:Label ID="notificationLabel" runat="server" ForeColor="red" Text=""></asp:Label>
             </fieldset>
 
         </div>

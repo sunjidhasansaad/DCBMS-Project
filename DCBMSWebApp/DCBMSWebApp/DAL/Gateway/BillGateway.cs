@@ -40,5 +40,34 @@ namespace DCBMSWebApp.DAL.Gateway
             connection.Close();
             return isExist;
         }
+        public Bill GetBillByBillNo(string billNo)
+        {
+
+            // ReSharper disable once SuggestVarOrType_BuiltInTypes
+            string query = @"SELECT * from Bills Where Bills.BillNo = ('" + billNo + "')";
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = connectionString;
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+            SqlDataReader dataReader = command.ExecuteReader();
+
+            Bill aBill = null;
+            if (dataReader.HasRows)
+            {
+                dataReader.Read();
+
+                aBill = new Bill();
+                aBill.Id = (int)dataReader["Id"];
+                aBill.Date = (DateTime)dataReader["Date"];
+                aBill.DueAmount = (decimal)dataReader["DueAmount"];
+                aBill.TotalAmount = (decimal)dataReader["TotalAmount"];
+                aBill.PaidAmount = (decimal)dataReader["PaidAmount"];
+            }
+            dataReader.Close();
+            connection.Close();
+            return aBill;
+        }
     }
 }

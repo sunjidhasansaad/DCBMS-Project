@@ -29,5 +29,10 @@ namespace DCBMSWebApp.BLL
         {
             return _billGateway.IsBillNoExist(bill);
         }
+
+        public Bill GetBillByBillNo(string billNo)
+        {
+            return _billGateway.GetBillByBillNo(billNo);
+        }
     }
 }
