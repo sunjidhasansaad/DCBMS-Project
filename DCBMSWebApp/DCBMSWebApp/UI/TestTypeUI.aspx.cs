@@ -27,15 +27,22 @@ namespace DCBMSWebApp.UI
         }
         protected void saveButton_OnClick(object sender, EventArgs e)
         {
-            TestType testType = new TestType();
+            if (typeTextBox.Text != "")
+            {
+                TestType testType = new TestType();
 
-            testType.Name = typeTextBox.Text;
+                testType.Name = typeTextBox.Text;
 
-            validationLabel.Text = _testTypeManager.Save(testType);
+                validationLabel.Text = _testTypeManager.Save(testType);
 
-            ShowTypeInGridView();
+                ShowTypeInGridView();
 
-            typeTextBox.Text = "";
+                typeTextBox.Text = "";
+            }
+            else
+            {
+                validationLabel.Text = "Enter Type Name.";
+            }
         }
     }
 }

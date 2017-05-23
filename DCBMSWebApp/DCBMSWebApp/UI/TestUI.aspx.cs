@@ -36,23 +36,35 @@ namespace DCBMSWebApp.UI
         }
         protected void saveButton_OnClick(object sender, EventArgs e)
         {
-            if (typeDropDownList.SelectedIndex > 0)
+            if (testNameTextBox.Text == "" && feeTextBox.Text =="")
             {
-                Test test = new Test();
-
-                test.Name = testNameTextBox.Text;
-                test.Fee = Convert.ToDecimal(feeTextBox.Text);
-                test.TypeId = Convert.ToInt32(typeDropDownList.SelectedValue);
-
-                validationLabel.Text = _testManager.Save(test);
-
-                ClearText();
-                ShowTestListGridView();
+                validationLabel.Text = "Enter All Information!";
+            }
+            else if(Convert.ToDecimal(feeTextBox.Text) < 0)
+            {
+                validationLabel.Text = "Enter Valid Fee Amount!";
             }
             else
             {
-                validationLabel.Text = "Select a Type !";
+                if (typeDropDownList.SelectedIndex > 0)
+                {
+                    Test test = new Test();
+
+                    test.Name = testNameTextBox.Text;
+                    test.Fee = Convert.ToDecimal(feeTextBox.Text);
+                    test.TypeId = Convert.ToInt32(typeDropDownList.SelectedValue);
+
+                    validationLabel.Text = _testManager.Save(test);
+
+                    ClearText();
+                    ShowTestListGridView();
+                }
+                else
+                {
+                    validationLabel.Text = "Select a Type !";
+                }
             }
+            
         }
 
         protected void ClearText()

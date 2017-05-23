@@ -110,58 +110,70 @@ namespace DCBMSWebApp.UI
 
         protected void saveButton_OnClick(object sender, EventArgs e)
         {
-            if (testList.Count > 0)
+            if (patientNameTextBox.Text == "" && dateOfBirthTextBox.Text == "" && mobileNoTextBox.Text == "")
             {
-                string message = "";
-
-                Bill aBill = new Bill();
-
-                aBill.BillNo = DateTime.Now.ToString("yyMMddhhmmssff");
-                aBill.Date = DateTime.Now;
-                aBill.TotalAmount = Convert.ToDecimal(totalAmountTextBox.Text);
-                aBill.PaidAmount = 0;
-                aBill.DueAmount = aBill.TotalAmount;
-                Patient aPatient = new Patient();
-
-                aPatient.Name = patientNameTextBox.Text;
-                aPatient.DateOfBirth = Convert.ToDateTime(dateOfBirthTextBox.Text);
-                aPatient.MobileNo = mobileNoTextBox.Text;
-                aPatient.BillNo = aBill.BillNo;
-
-                patientNameTextBox.Text = String.Empty;
-                dateOfBirthTextBox.Text = "";
-                mobileNoTextBox.Text = "";
-
-                if (!_billManager.IsBillNoExist(aBill))
-                {
-                    message = _billManager.Save(aBill);
-
-                    message += _patientManager.Save(aPatient);
-
-                    notificationLabel.Text = message;
-
-                    foreach (var test in testList)
-                    {
-                        TestBillVM testBillVm = new TestBillVM();
-
-                        testBillVm.BillNo = aBill.BillNo;
-                        testBillVm.TestId = test.Id;
-
-                        _testBillManager.Save(testBillVm);
-                    }
-
-                    Session["isSaved"] = true;
-                    GeneratePdf(aBill.BillNo, aBill.Date);
-                }
-                else
-                {
-                    notificationLabel.Text = "Bill Already Exists !!";
-                }
+                validationLabel.Text = "Enter All Information!";
+            }
+            else if (mobileNoTextBox.Text.Length > 11 || mobileNoTextBox.Text.Length < 11)
+            {
+                validationLabel.Text = "Enter Valid Mobile No.";
             }
             else
             {
-                notificationLabel.Text = "Add test First !";
+                if (testList.Count > 0)
+                {
+                    string message = "";
+
+                    Bill aBill = new Bill();
+
+                    aBill.BillNo = DateTime.Now.ToString("yyMMddhhmmssff");
+                    aBill.Date = DateTime.Now;
+                    aBill.TotalAmount = Convert.ToDecimal(totalAmountTextBox.Text);
+                    aBill.PaidAmount = 0;
+                    aBill.DueAmount = aBill.TotalAmount;
+                    Patient aPatient = new Patient();
+
+                    aPatient.Name = patientNameTextBox.Text;
+                    aPatient.DateOfBirth = Convert.ToDateTime(dateOfBirthTextBox.Text);
+                    aPatient.MobileNo = mobileNoTextBox.Text;
+                    aPatient.BillNo = aBill.BillNo;
+
+                    patientNameTextBox.Text = String.Empty;
+                    dateOfBirthTextBox.Text = "";
+                    mobileNoTextBox.Text = "";
+
+                    if (!_billManager.IsBillNoExist(aBill))
+                    {
+                        message = _billManager.Save(aBill);
+
+                        message += _patientManager.Save(aPatient);
+
+                        notificationLabel.Text = message;
+
+                        foreach (var test in testList)
+                        {
+                            TestBillVM testBillVm = new TestBillVM();
+
+                            testBillVm.BillNo = aBill.BillNo;
+                            testBillVm.TestId = test.Id;
+
+                            _testBillManager.Save(testBillVm);
+                        }
+
+                        Session["isSaved"] = true;
+                        GeneratePdf(aBill.BillNo, aBill.Date);
+                    }
+                    else
+                    {
+                        notificationLabel.Text = "Bill Already Exists !!";
+                    }
+                }
+                else
+                {
+                    notificationLabel.Text = "Add test First !";
+                }
             }
+            
         }
 
         protected void testDropDownList_OnSelectedIndexChanged(object sender, EventArgs e)
