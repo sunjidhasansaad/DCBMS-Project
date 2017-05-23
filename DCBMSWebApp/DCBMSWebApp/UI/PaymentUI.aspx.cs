@@ -57,15 +57,15 @@ namespace DCBMSWebApp.UI
                 decimal lastPaidAmount = Convert.ToDecimal(paidAmountLabel.Text);
                 aBill.PaidAmount = Convert.ToDecimal(payAmountTextBox.Text) + lastPaidAmount;
                 aBill.DueAmount = Convert.ToDecimal(DueAmountLabel.Text);
-                _paymentManager.PayAmount(aBill);
-
-
-                billDateLabel.Text = aBill.Date.ToShortDateString();
-                totalFeeLabel.Text = aBill.TotalAmount.ToString();
-                paidAmountLabel.Text = aBill.PaidAmount.ToString();
-                DueAmountLabel.Text = aBill.DueAmount.ToString();
                 notificationLabel.Text = _paymentManager.PayAmount(aBill);
 
+                Bill bill = _billManager.GetBillByBillNo(aBill.BillNo);
+
+                billDateLabel.Text = bill.Date.ToShortDateString();
+                totalFeeLabel.Text = bill.TotalAmount.ToString();
+                paidAmountLabel.Text = bill.PaidAmount.ToString();
+                DueAmountLabel.Text = bill.DueAmount.ToString();
+                
             }
         }
     }

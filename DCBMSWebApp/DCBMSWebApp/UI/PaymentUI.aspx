@@ -115,7 +115,7 @@
                             <asp:TextBox ID="payAmountTextBox" runat="server"></asp:TextBox>
                           
                             <asp:RegularExpressionValidator ID="feeRegularExpressionValidator" runat="server" ControlToValidate="payAmountTextBox"
-                                                ValidationExpression="[+]?[0-9]*\.?[0-9]+" ErrorMessage="Enter valid amount!"/>
+                                                ValidationExpression="((\d+)((\.\d{1,2})?))$" ErrorMessage="Enter valid amount!" ForeColor="Red"/>
                     
                         </div>
                         </div>
